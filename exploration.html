@@ -9,17 +9,18 @@
     <script src="p5.min.js"></script>
     </head>
     <body>
-        ACE
+        Text test
         <script>
         function setup(){
             canvas = createCanvas(500,500);
         }
             function draw(){
-                rect(mouseX,random(50,200),10,10);
+                if (mouseX >= 100 ||  mouseY >=70){
+                 rect(mouseX,mouseY,10,10);
+                }
             }
-            function draw(){
-                rect(50,50,500,100);
-            }
+
+    
         </script>
     </body>
 </html>
