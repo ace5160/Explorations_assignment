@@ -11,7 +11,6 @@
     <body>
         <script>
             var x = 0;
-
 function setup() {
     canvas = createCanvas (500,500);
   background(100);  
@@ -19,7 +18,8 @@ function setup() {
 
 function draw() {
   ellipse(x, height/2, 20, 20);
-  x = x + 1;
+if(x<=250){x = x + 1;}
+    
 }
         //function setup(){
         //    canvas = createCanvas(500,500);
