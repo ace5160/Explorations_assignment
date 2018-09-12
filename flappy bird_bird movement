@@ -1,0 +1,36 @@
+<! DOCTYPE html>
+<html>
+<head>
+    <style>
+    body{
+        background-color: gainsboro
+        }
+    </style>
+    <script src="p5.min.js"></script>
+    </head>
+    <body>
+        <script>
+            var x = 0;
+function setup() {
+    canvas = createCanvas (500,500);
+  background(100);  
+}
+
+function draw() {
+  ellipse(x, height/2, 20, 20);
+if(x<=250){x = x + 1;}
+    
+}
+        //function setup(){
+        //    canvas = createCanvas(500,500);
+       // }
+        //    function draw(){
+         //       if (mouseIsPressed) {
+         //        rect(mouseX,mouseY,10,10);
+           //     }
+            //}
+
+    
+        </script>
+    </body>
+</html>
