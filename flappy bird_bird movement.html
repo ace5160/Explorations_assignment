@@ -10,16 +10,25 @@
     </head>
     <body>
         <script>
-            var x = 0;
+            var x = 50;
+            var x2;
 function setup() {
     canvas = createCanvas (500,500);
-  background(100);  
+    x2 = height / 2;
+//background(10);  
 }
-
 function draw() {
-  ellipse(x, height/2, 20, 20);
-if(x<=450){x = x + 1;}
-    
+      background(10);  
+
+  ellipse(x, x2, 20, 20);
+   if(x<=450){x = x + 1;
+             }          
+if (mouseIsPressed){
+    x2--;
+}
+    else {x2 = x2 + 1;}
+  //  print(mouseIsPressed);
+    // if(x<=450){x = x + 1;}  
 }
         //function setup(){
         //    canvas = createCanvas(500,500);

@@ -1,22 +1,33 @@
 <html>
 <head>
-    <style>
-    body{
-        background-color: darkslategray
+    <style type="text/css">
+    body {
+        color:azure;
+        background-color: dimgrey;
         }
+        h1 {
+    font-family: Verdana, Geneva, Arial,
+          SunSans-Regular, sans-serif }
     </style>
     </head>
     <script src="p5.min.js"></script>
+    <script src="addons/p5.dom.min.js"></script>
     <body>
-        MAIN TEXT
+                <script>
+                    var x = 0;
+function setup() {
+    var canv = createCanvas (500,500);
+    canv.position(0,0);
+ // background(100);  
+}
+
+function draw() {
+  ellipse(x, height/2, 20, 20);
+if(x<=450){x = x + 1;}
+}
+                </script>
+        <h1> SHIKHAR JUYAL </h1>
         <p>Second line probably</p>
         <p><a href= flappy%20bird_bird%20movement.html> The game probably </a> </p>
-        <script>
-function setup() {
-    canvas = createCanvas (1000,1000);  
-}
-            
-    
-        </script>
     </body>
 </html>
