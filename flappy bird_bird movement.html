@@ -24,9 +24,19 @@ function draw() {
    if(x<=450){x = x + 1;
              }          
 if (mouseIsPressed){
+    if(mouseX < 100 & mouseY < 100)
+    {
     x2--;
 }
-    else {x2 = x2 + 1;}
+}
+    else {
+        x2 = x2 + 1;
+    }
+    
+    if(x2>450){
+        x2 = x2 - 1;
+              }
+    
   //  print(mouseIsPressed);
     // if(x<=450){x = x + 1;}  
 }
