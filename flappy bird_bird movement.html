@@ -30,6 +30,12 @@
             this.update = function() {
                 this.x -= this.speed;
             }
+            
+            this.offscreen = function() {
+                if (this.x < -this.w) {
+                    return true; }
+                else { return false; }
+            }
             }
             
 function setup() {
@@ -57,13 +63,15 @@ if (mouseIsPressed){
         y = y - 1;
               }
     
-    if(frameCount % 80 == 0){
+    if(frameCount % 40 == 0){
         pipes.push(new Pipe());
     }
     
-    for(var i = 0; i < pipes.length; i++){
+    for(var i = pipes.length-1; i >= 0; i--){
         pipes[i].show();
         pipes[i].update();
+        if (pipes[i].offscreen())
+            pipes.splice(i, 1);
     }
     
   //  print(mouseIsPressed);
