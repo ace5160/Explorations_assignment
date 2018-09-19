@@ -1,17 +1,85 @@
 <! DOCTYPE html>
 <html>
 <head>
-    <style>
-    body{
-        background-color: gainsboro
+     <style type="text/css">
+    body {
+        color:lightcyan;
+        background-color: black
+        }
+        h1 {
+    font-family: Verdana, Geneva, Arial,
+          SunSans-Regular, sans-serif 
+         }
+         h2 {
+    font-family: Verdana, Geneva, Arial,
+          SunSans-Regular, sans-serif 
+         }
+    </style>
+    
+    <style> img{
+            width: 100%;
         }
     </style>
+    <style>
+#parent1 {
+    position: static;
+    border: 0px solid blue;
+    width: 1px;
+    height: 1px;
+}
+
+#child1 {
+    position: absolute;
+    border: 3px solid white;
+    font-size: 25;
+    font-family: sans-serif;
+    color: azure;
+    top: 380px;
+    right: 220px;
+        }
+    
+  #child2 {
+    position: absolute;
+    border: 0px solid grey;
+    font-size: 25;
+      font-family: sans-serif;
+    top: 20px;
+    right: 185px;  
+        }
+        
+        #child3 {
+    position: absolute;
+    border: 2px solid white;
+    font-size: 20;
+            font-family: sans-serif;
+    top: 700px;
+    right: 1310px; 
+}
+        
+                #child4 {
+    position: absolute;
+    border: 2px solid white;
+    font-size: 20;
+            font-family: sans-serif;
+    top: 700px;
+    right: 1010px; 
+}
+        
+    </style>
+    
     <script src="p5.min.js"></script>
+    <script src="addons/p5.dom.min.js"></script>
+    <script type="text/javascript">
+    var scr;
+    </script>
+            
     </head>
     <body>
         <script>
             var x = 50;
+             scr = 0;
             var y;
+            var diffi=40;
             var pipes = [];
             function Pipe()
             {
@@ -36,57 +104,87 @@
                     return true; }
                 else { return false; }
             }
+            
+              if(y < this.top || y > height-this.bottom) {
+        if(x > this.x && x < this.x + this.w) {
+           rect(100,100,100,100); 
+        }
+        
+    }
             }
             
 function setup() {
-    canvas = createCanvas (500,500);
+    var canv = createCanvas (1200,400);
+    canv.position(0,10);
     y = height / 2;
     pipes.push(new Pipe());
+    
 }
+            function mousePressed(){
+     if (mouseX < 225 & mouseX > 18 & mouseY > 690){
+         window.location.href = "https://shikharj.wixsite.com/shikhar";
+     }
+                
+     if (mouseX < 526 & mouseX > 375 & mouseY > 690){
+         window.location.href = "https://shikharj.wixsite.com/shikhar/blog";
+     }
+}
+
+    
 function draw() {
       background(10);  
-
+   rect(0,0,width,5);
+    rect(0,height-5,width,5);
   ellipse(x, y, 20, 20);
-  // if(x<=450){x = x + 1;
-    //         }          
+
+    
 if (mouseIsPressed){
-    if(mouseX < 100 & mouseY < 100)
+    if(mouseX > 1220 & mouseY > 372 & mouseX <1320 & mouseY <405)
     {
-    y--;
+    y = y-3;
 }
 }
     else {
         y = y + 1;
     }
     
-    if(y>450){
+    if(y>height-40){
         y = y - 1;
               }
     
-    if(frameCount % 40 == 0){
+    if(frameCount % diffi == 0){
         pipes.push(new Pipe());
     }
     
     for(var i = pipes.length-1; i >= 0; i--){
         pipes[i].show();
         pipes[i].update();
+        scr++;
         if (pipes[i].offscreen())
             pipes.splice(i, 1);
     }
-    
-  //  print(mouseIsPressed);
-    // if(x<=450){x = x + 1;}  
+ 
 }
-        //function setup(){
-        //    canvas = createCanvas(500,500);
-       // }
-        //    function draw(){
-         //       if (mouseIsPressed) {
-         //        rect(mouseX,mouseY,10,10);
-           //     }
-            //}
 
     
         </script>
+        <div id="parent1">panda easter egg.
+  <div id="child1">_JUMP_</div>
+            <div id="child2">
+            Score -  <br>
+            Hi-Score - <br>
+            
+            </div>
+             <div id="child3"><font color="white"></font> . Continue to Website .
+            </div>
+            
+            <div id="child4"><font color="white"></font> . From the Blog .
+            </div>
+</div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+        <h1 style="font-size: 300%"> SHIKHAR JUYAL </h1>
+        <h2 style="font-size: 120%"> Game Design. Doodling. Concepts. </h2>
+        <p style="font-family: sans-serif"> Hey there! Welcome. Designing unique and fun games has always been a passion for me.<br> Focusing heavily on the uniqueness of the concept and mechanics, I strive to utilize my narrative skills in my games.<br> Exploring new and emergent technologies like VR in my game design is also something I love. </p>
     </body>
 </html>
